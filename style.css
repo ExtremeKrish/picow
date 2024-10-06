@@ -1,1 +1,50 @@
-here
+body {
+    background-color: #0f0f0f;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    background-color: #003300;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button:hover {
+    background-color: #00ff00;
+    color: #003300;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #00ff00;
+    text-align: center;
+}
+
+td.name {
+    width: 100%;
+}
+
+form button {
+    width: 100%;
+    background-color: #003300;
+    color: #00ff00;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+form button:hover {
+    background-color: #00ff00;
+    color: #003300;
+}
