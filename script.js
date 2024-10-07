@@ -41,17 +41,28 @@ document.getElementById('newbtn').addEventListener('click', function() {
 
                 // Optional: Add confirmation dialog before submitting the form
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: `Do you want to delete ${fileName}?`,
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Delete',
-                    cancelButtonText: 'Cancel',
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        // Submit the form programmatically
-                        form.submit();
-                    }
+                title: '<span style="color:#00ff00;">Are you sure?</span>',
+                html: `<span style="color:#00ff00;">Do you want to delete <b>${fileName}</b>?</span>`,
+                icon: 'warning',
+                background: '#000000',  // Pure black background
+                color: '#00ff00',       // Hacker green text color
+                iconColor: '#00ff00',   // Green color for the icon
+                showCancelButton: true,
+                confirmButtonText: '<span style="color:black;">Yes, delete it!</span>',
+                cancelButtonText: '<span style="color:black;">No, cancel!</span>',
+                confirmButtonColor: '#00ff00',  // Green for confirm button background
+                cancelButtonColor: '#3085d6',   // Blue for cancel button background
+                customClass: {
+                    popup: 'swal2-hacker-popup',
+                    title: 'swal2-hacker-title',
+                    confirmButton: 'swal2-hacker-confirm',
+                    cancelButton: 'swal2-hacker-cancel'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Submit the form programmatically
+                    form.submit();
+                }
                 });
             });
         });
