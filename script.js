@@ -66,4 +66,26 @@ document.getElementById('newbtn').addEventListener('click', function() {
                 });
             });
         });
+
+
+
+ const deleteButtons = document.querySelectorAll('.rename-btn');
+
+        // Loop through each delete button
+        deleteButtons.forEach((button) => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default form submission
+               
+                // Find the parent form
+                const form = this.closest('form');
+
+                // Custom logic for setting the form action
+                const fileName = form.closest('tr').querySelector('.name').textContent;
+                 var newName = prompt("Enter New Name", fileName);
+                form.action = `/rename/${fileName}/newName`;  // Custom action
+
+                // Optional: Add confirmation dialog before submitting the form
+               
+            });
+        });
                                                    
