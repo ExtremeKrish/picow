@@ -3,7 +3,7 @@ document.getElementById('newbtn').addEventListener('click', function() {
     
     if (newName) {
         // Send a POST request with plain text data
-        fetch('/new/data', {
+        fetch(('/new/' + newName), {
             method: 'POST',
             headers: {
                 'Content-Type': 'text/plain'  // Specify the content type as plain text
