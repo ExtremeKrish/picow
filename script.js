@@ -2,16 +2,13 @@ document.getElementById('newbtn').addEventListener('click', function() {
     let newName = prompt("Enter new name:");
     
     if (newName) {
-        // Create the request body
-        const requestData = { name: newName };
-
-        // Send a POST request
-        fetch('/new', {
+        // Send a POST request with plain text data
+        fetch('/new/data', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'text/plain'  // Specify the content type as plain text
             },
-            body: JSON.stringify(requestData)
+            body: newName  // Send the plain text data
         })
         .then(response => {
             if (response.ok) {
