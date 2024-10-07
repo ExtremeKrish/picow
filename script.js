@@ -25,3 +25,34 @@ document.getElementById('newbtn').addEventListener('click', function() {
         });
     }
 });
+ const deleteButtons = document.querySelectorAll('.delete-btn');
+
+        // Loop through each delete button
+        deleteButtons.forEach((button) => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Find the parent form
+                const form = this.closest('form');
+
+                // Custom logic for setting the form action
+                const fileName = form.closest('tr').querySelector('.name').textContent;
+                form.action = `/delete/${fileName}`;  // Custom action
+
+                // Optional: Add confirmation dialog before submitting the form
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: `Do you want to delete ${fileName}?`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Delete',
+                    cancelButtonText: 'Cancel',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Submit the form programmatically
+                        form.submit();
+                    }
+                });
+            });
+        });
+                                                   
